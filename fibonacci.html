@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fibonacci Number</title>
+        <script>
+            function getSeries(){
+
+                let len=document.getElementById('fib').value;
+                let a=0,b=1,series=0;
+                const arr1=[];
+                if(len==0 || len<0){
+                    document.getElementById('ans').innerHTML="Please Enter Valid Number ";
+
+                }else if(len==1){
+                    arr1.push(b);
+                    document.getElementById('ans').innerHTML=arr1;
+
+                }
+                
+                else{
+                    for(let i=2;i<len;i++){
+                    series=a+b;
+                    a=b;
+                    b=series;
+                    arr1.push(b);
+                }
+                arr1.push(a,b)
+
+                document.getElementById('ans').innerHTML=arr1;
+                }
+                
+            }
+       
+    </script>
+    </head>
+    <body>
+        <form action="#" method="get" name="fibonacci" >
+            <input type="number" id="fib" max="100" min="0">
+            <input type="submit" value="Print" onclick="getSeries()">
+            <p id="ans"></p>
+        </form>
+    </body>
+</html>
