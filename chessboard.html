@@ -28,14 +28,18 @@
         .chessboard {
             display: grid;
             border: 1px solid black;
-            grid-template-columns: repeat(8 , auto); 
+            grid-template-columns: repeat(8,auto);
+            /* grid-template-rows: minmax(10vw,20vw); */
             column-gap: 0;
-            height: auto;
-            width: 80vh;
-            height: 80vh;
+            /* width: 80vw;
+            height: 80vh; */
+            width: min(80vh,80vw);
+            height: min(80vh,80vw);
            
         }
         .square{
+            /* width: fit-content; */
+            /* height: fir;  */
             margin: 0;
             padding: 0;
         }
@@ -47,8 +51,12 @@
 </head>
 
 <body>
-
+    <!-- <div class="row">
+        <div class="col col-12"> -->
             <div class="chessboard"></div>
+
+        <!-- </div>
+    </div> -->
 
     <script>
         const box = document.querySelector('.chessboard');
@@ -63,8 +71,7 @@
                 else {
                     square.style.backgroundColor = 'white';
                 }
-                square.style.height =10+ "vh";
-                square.style.width = 10 + "vh";
+               
                 box.appendChild(square);
             }
         }
